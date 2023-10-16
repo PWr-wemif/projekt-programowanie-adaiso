@@ -1,7 +1,5 @@
 # Aplikacja Wspomagająca Grę w Blackjacka
 
-![Blackjack](https://upload.wikimedia.org/wikipedia/commons/8/8b/Blackjack_board.JPG)
-
 ## Opis Działania Aplikacji
 Aplikacja ta ma na celu pomóc graczom w doskonaleniu swoich umiejętności w grze w blackjacka, zarówno dla początkujących, jak i zaawansowanych. Zapewnia narzędzia, statystyki i strategie, które pomagają graczom podejmować lepsze decyzje i śledzić swoje wyniki.
 
