@@ -1,4 +1,4 @@
-# Aplikacja pomagająca doskonalić grę w blackjacka
+# Aplikacja pomagająca doskonalić grę w BlackJacka
 
 ## Jak będzie działać aplikacja?
 Aplikacja ma na celu pomóc graczom w doskonaleniu swoich umiejętności w grze w blackjacka. Zapewnia narzędzia, statystyki i strategie, które pomagają graczom podejmować lepsze decyzje.
