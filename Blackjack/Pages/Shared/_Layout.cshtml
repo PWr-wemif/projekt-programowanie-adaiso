@@ -1,51 +1,131 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Blackjack</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Blackjack.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link id="themeStylesheet" rel="stylesheet" href="~/css/dark-theme.css" asp-append-version="true" />
+    @RenderSection("Styles", required: false)
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+        }
+
+        #toggleDarkModeBtn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+            #toggleDarkModeBtn.dark-mode {
+                background-color: #343a40;
+                color: #ffffff;
+            }
+
+            #toggleDarkModeBtn i {
+                transition: opacity 0.3s;
+                opacity: 0;
+            }
+
+            #toggleDarkModeBtn.dark-mode i.sun-icon {
+                opacity: 1;
+            }
+
+            #toggleDarkModeBtn i.moon-icon {
+                opacity: 1;
+            }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            padding: 10px;
+        }
+
+            nav ul {
+                display: flex;
+                list-style-type: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            nav li {
+                margin-right: 10px;
+            }
+
+            nav a {
+                display: block;
+                padding: 15px;
+                text-align: center;
+                text-decoration: none;
+                color: #fff;
+                background-color: inherit; /* Ustawienie tła na dziedziczone od rodzica, czyli tła .container */
+                border: 1px solid #007bff;
+                border-radius: 15px;
+                transition: background-color 0.3s, color 0.3s;
+            }
+
+
+                nav a:last-child {
+                    margin-right: 0;
+                }
+
+        .container {
+            margin-top: 80px;
+            background-color: inherit; /* Ustawienie tła na dziedziczone od rodzica, czyli tła całej strony */
+            padding: 20px; /* Dodanie dodatkowego paddingu dla lepszego wyglądu */
+        }
+
+    </style>
 </head>
+
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Blackjack</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+    <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">
+        <i class="fas fa-moon moon-icon"></i>
+        <i class="fas fa-sun sun-icon"></i>
+    </button>
     <div class="container">
-        <main role="main" class="pb-3">
+        <header>
+            <nav>
+                <ul>
+                    <li><a asp-page="/Index">Strona główna</a></li>
+                    <li><a asp-page="/Home/SymulatorGry">Symulator gry</a></li>
+                    <li><a asp-page="/Home/MojeWyniki">Moje wyniki</a></li>
+                    <li><a asp-page="/Home/Wskazowki">Wskazówki</a></li>
+                    <li><a asp-page="/Home/Poradniki">Poradniki</a></li>
+                    <li><a asp-page="/Home/MojProfil">Mój profil</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div>
             @RenderBody()
-        </main>
-    </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - Blackjack - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
-    </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+        function toggleDarkMode() {
+            var themeStylesheet = document.getElementById('themeStylesheet');
+            var toggleBtn = document.getElementById('toggleDarkModeBtn');
+            if (themeStylesheet.getAttribute('href').includes('dark-theme.css')) {
+                themeStylesheet.setAttribute('href', '/css/light-theme.css');
+                toggleBtn.classList.remove('dark-mode');
+            } else {
+                themeStylesheet.setAttribute('href', '/css/dark-theme.css');
+                toggleBtn.classList.add('dark-mode');
+            }
+        }
+    </script>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
-    @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

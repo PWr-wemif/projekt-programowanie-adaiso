@@ -5,6 +5,14 @@
       "PackagePath": "staticwebassets\\Blackjack.bundle.scp.css"
     },
     {
+      "Id": "D:\\GitHub\\projekt-programowanie-adaiso\\Blackjack\\wwwroot\\css\\dark-theme.css",
+      "PackagePath": "staticwebassets\\css\\dark-theme.css"
+    },
+    {
+      "Id": "D:\\GitHub\\projekt-programowanie-adaiso\\Blackjack\\wwwroot\\css\\light-theme.css",
+      "PackagePath": "staticwebassets\\css\\light-theme.css"
+    },
+    {
       "Id": "D:\\GitHub\\projekt-programowanie-adaiso\\Blackjack\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
