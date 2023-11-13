@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uT5ZEyhx3+/p+mIJM5S0rsvLE/p8A2QmfEdX9ZDvQuc=",
+  "Hash": "5N4DT7AxNTmxJBkMGZMmZe8ippTcLu7cOl3oHdUA9kI=",
   "Source": "Blackjack",
   "BasePath": "_content/Blackjack",
   "Mode": "Default",
@@ -49,6 +49,40 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\GitHub\\projekt-programowanie-adaiso\\Blackjack\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Blackjack.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\GitHub\\projekt-programowanie-adaiso\\Blackjack\\wwwroot\\css\\dark-theme.css",
+      "SourceId": "Blackjack",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHub\\projekt-programowanie-adaiso\\Blackjack\\wwwroot\\",
+      "BasePath": "_content/Blackjack",
+      "RelativePath": "css/dark-theme.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\dark-theme.css"
+    },
+    {
+      "Identity": "D:\\GitHub\\projekt-programowanie-adaiso\\Blackjack\\wwwroot\\css\\light-theme.css",
+      "SourceId": "Blackjack",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GitHub\\projekt-programowanie-adaiso\\Blackjack\\wwwroot\\",
+      "BasePath": "_content/Blackjack",
+      "RelativePath": "css/light-theme.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\light-theme.css"
     },
     {
       "Identity": "D:\\GitHub\\projekt-programowanie-adaiso\\Blackjack\\wwwroot\\css\\site.css",
