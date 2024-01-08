@@ -1,5 +1,6 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>@ViewData["Title"] - Blackjack</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -9,45 +10,18 @@
     <style>
         body {
             margin: 0;
+            background-color: #222; /* Zmiana koloru tła na ciemniejszy */
+            color: #fff; /* Zmiana koloru tekstu na jasny */
         }
-
-        #toggleDarkModeBtn {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: #007bff;
-            color: #ffffff;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-            #toggleDarkModeBtn.dark-mode {
-                background-color: #343a40;
-                color: #ffffff;
-            }
-
-            #toggleDarkModeBtn i {
-                transition: opacity 0.3s;
-                opacity: 0;
-            }
-
-            #toggleDarkModeBtn.dark-mode i.sun-icon {
-                opacity: 1;
-            }
-
-            #toggleDarkModeBtn i.moon-icon {
-                opacity: 1;
-            }
 
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #333;
+            background-color: #333; /* Dopasowanie koloru prostokąta nawigacyjnego */
             padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
 
             nav ul {
@@ -67,12 +41,17 @@
                 text-align: center;
                 text-decoration: none;
                 color: #fff;
-                background-color: inherit; /*tło .container */
-                border: 1px solid #007bff;
+                background-color: inherit;
+                border: 1px solid #fff; /* Zmiana koloru obramowania */
                 border-radius: 15px;
                 transition: background-color 0.3s, color 0.3s;
             }
 
+                nav a:hover,
+                nav a.active {
+                    background-color: #fff; /* Zmiana koloru podświetlenia na biały */
+                    color: #000; /* Zmiana koloru tekstu na ciemny */
+                }
 
                 nav a:last-child {
                     margin-right: 0;
@@ -80,28 +59,25 @@
 
         .container {
             margin-top: 80px;
-            background-color: inherit; /* tło całej strony */
-            padding: 20px; 
+            background-color: #333; /* Dopasowanie koloru tła całej strony */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
-
     </style>
 </head>
 
 <body>
-    <button id="toggleDarkModeBtn" onclick="toggleDarkMode()">
-        <i class="fas fa-moon moon-icon"></i>
-        <i class="fas fa-sun sun-icon"></i>
-    </button>
     <div class="container">
         <header>
             <nav>
                 <ul>
-                    <li><a asp-page="/Index">Strona główna</a></li>
-                    <li><a asp-page="/Home/SymulatorGry">Symulator gry</a></li>
-                    <li><a asp-page="/Home/MojeWyniki">Moje wyniki</a></li>
-                    <li><a asp-page="/Home/Wskazowki">Wskazówki</a></li>
-                    <li><a asp-page="/Home/Poradniki">Poradniki</a></li>
-                    <li><a asp-page="/Home/MojProfil">Mój profil</a></li>
+                    <li><a asp-page="/Index" class="@(Context.Request.Path == "/Index" ? "active" : "")">Strona główna</a></li>
+                    <li><a asp-page="/Home/SymulatorGry" class="@(Context.Request.Path == "/Home/SymulatorGry" ? "active" : "")">Symulator gry</a></li>
+                    <li><a asp-page="/Home/MojeWyniki" class="@(Context.Request.Path == "/Home/MojeWyniki" ? "active" : "")">Moje wyniki</a></li>
+                    <li><a asp-page="/Home/Wskazowki" class="@(Context.Request.Path == "/Home/Wskazowki" ? "active" : "")">Wskazówki</a></li>
+                    <li><a asp-page="/Home/Poradniki" class="@(Context.Request.Path == "/Home/Poradniki" ? "active" : "")">Poradniki</a></li>
+                    <li><a asp-page="/Home/MojProfil" class="@(Context.Request.Path == "/Home/MojProfil" ? "active" : "")">Mój profil</a></li>
                 </ul>
             </nav>
         </header>
@@ -112,20 +88,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script>
-        function toggleDarkMode() {
-            var themeStylesheet = document.getElementById('themeStylesheet');
-            var toggleBtn = document.getElementById('toggleDarkModeBtn');
-            if (themeStylesheet.getAttribute('href').includes('dark-theme.css')) {
-                themeStylesheet.setAttribute('href', '/css/light-theme.css');
-                toggleBtn.classList.remove('dark-mode');
-            } else {
-                themeStylesheet.setAttribute('href', '/css/dark-theme.css');
-                toggleBtn.classList.add('dark-mode');
-            }
-        }
-    </script>
-
     @RenderSection("Scripts", required: false)
 </body>
+
 </html>

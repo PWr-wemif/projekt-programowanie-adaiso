@@ -1,5 +1,5 @@
 ﻿@page
-@model SymulatorGryModel
+@model Blackjack.Pages.Home.SymulatorGryModel
 @{
     ViewData["Title"] = "Symulator gry";
 }
@@ -7,3 +7,35 @@
 <div class="text-center">
     <h2>Symulator gry</h2>
 </div>
+
+<div>
+    <h3>Karty Gracza:</h3>
+    <ul>
+        @foreach (var karta in Model.Blackjack.KartyGracza ?? new List<string>())
+        {
+            <li>@karta</li>
+        }
+
+    </ul>
+</div>
+<div>
+    <h3>Suma punktów Gracza: @Model.Blackjack.SumaPunktowGracza</h3>
+</div>
+
+<div>
+    <h3>Karty Krupiera:</h3>
+    <ul>
+        @foreach (var karta in Model.Blackjack.KartyKrupiera ?? new List<string>())
+        {
+            <li>@karta</li>
+        }
+    </ul>
+</div>
+<div>
+    <h3>Suma punktów Krupiera: @Model.Blackjack.SumaPunktowKrupiera</h3>
+</div>
+
+<form method="post">
+    <button type="submit" formaction="SymulatorGry" formmethod="post" name="DobierzKarte">Dobierz kartę</button>
+    <button type="submit" formaction="SymulatorGry" formmethod="post" name="Stand">Stand</button>
+</form>

@@ -28,3 +28,10 @@ D:\GitHub\projekt-programowanie-adaiso\Blackjack\obj\Debug\net6.0\refint\Blackja
 D:\GitHub\projekt-programowanie-adaiso\Blackjack\obj\Debug\net6.0\Blackjack.pdb
 D:\GitHub\projekt-programowanie-adaiso\Blackjack\obj\Debug\net6.0\Blackjack.genruntimeconfig.cache
 D:\GitHub\projekt-programowanie-adaiso\Blackjack\obj\Debug\net6.0\ref\Blackjack.dll
+D:\GitHub\projekt-programowanie-adaiso\Blackjack\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\GitHub\projekt-programowanie-adaiso\Blackjack\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\GitHub\projekt-programowanie-adaiso\Blackjack\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\GitHub\projekt-programowanie-adaiso\Blackjack\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\GitHub\projekt-programowanie-adaiso\Blackjack\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
+D:\GitHub\projekt-programowanie-adaiso\Blackjack\obj\Debug\net6.0\Blackjack.csproj.AssemblyReference.cache
+D:\GitHub\projekt-programowanie-adaiso\Blackjack\obj\Debug\net6.0\Blackjack.csproj.CopyComplete
